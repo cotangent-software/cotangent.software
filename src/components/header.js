@@ -1,32 +1,24 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styles from './header.module.css'
+import { Link } from 'gatsby';
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+  <header>
+    <div className={'flexCenter'}>
+      <Link to={'/'} className={'noLink'} style={{ display: 'flex' }}>
+        <div className={styles.logo}/>
+        <h1 style={{ margin: 0 }}>
+          {siteTitle.slice(1)}
+        </h1>
+      </Link>
+      <div style={{ flexGrow: 1 }}/>
+      <nav className={'flexCenter'}>
+        <Link to={'#about'}>About</Link>
+        <Link to={'#products'}>Products</Link>
+        <Link to={'#contact'}>Contact</Link>
+        <Link to={'https://github.com/cotangent-software'} target={'_blank'}><span className={styles.githubLogo}/></Link>
+      </nav>
     </div>
   </header>
 )

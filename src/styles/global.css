@@ -1,0 +1,23 @@
+html {
+    overflow-y: auto;
+}
+.flexCenter {
+    display: flex;
+    align-items: center;
+}
+.logoLargeDark {
+    background-image: url(../images/logo-dark.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 192px;
+    height: 192px;
+}
+.textContainer {
+    margin-left: 18rem;
+    margin-right: 18rem;
+    padding-top: 3rem;
+}
+.noLink {
+    color: inherit;
+    text-decoration: none;
+}

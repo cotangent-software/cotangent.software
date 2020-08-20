@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Header from "./header"
 import "./layout.css"
@@ -26,18 +26,32 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div style={{ marginTop: '94px' }}>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: '5rem' }}>
+              <Link to={'/'}>
+                <div className={'logoLargeDark'}/>
+              </Link>
+            </div>
+            <div className={'footerColumn'}>
+              <Link to={''}>About</Link>
+              <Link to={''}>Contact</Link>
+              <Link to={''}>News</Link>
+            </div>
+            <div className={'footerColumn'}>
+              <span>Products</span>
+              <Link to={''}>Dataflow</Link>
+              <Link to={'http://prismacademy.xyz'}>Prism.academy</Link>
+            </div>
+            <div style={{ position: 'absolute', bottom: 15, right: 20, color: '#a1a1a1', textAlign: 'right' }}>
+              <div className={'privacySection'}>
+                <Link to={'/privacy-policy'}>Privacy Policy</Link>
+              </div>
+              <div>© {new Date().getFullYear()} {data.site.siteMetadata.title} LLC</div>
+            </div>
+          </div>
         </footer>
       </div>
     </>
