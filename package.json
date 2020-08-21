@@ -2,7 +2,7 @@
   "name": "cotangent.software",
   "private": true,
   "description": "Public-facing static site for Cotangent Software LLC",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Connor Burns <ctrekker4@gmail.com>",
   "dependencies": {
     "gatsby": "^2.24.47",
@@ -42,13 +42,13 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && echo cotangent.software > public/CNAME && gh-pages -d public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/cotangent-software/cotangent.software"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/cotangent-software/cotangent.software/issues"
   }
 }
