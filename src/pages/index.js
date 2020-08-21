@@ -82,7 +82,7 @@ function IndexPage() {
         <div ref={leftCanvasContainer} style={{ flexGrow: 10 }}>
           <canvas ref={leftCanvas} width={'0'}> </canvas>
         </div>
-        <div ref={centerContainer} style={{ flexGrow: 1, height: '400px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        <div ref={centerContainer} style={{ flexGrow: 1, height: '400px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h1 style={{ marginBottom: '15px' }}>Software for the future</h1>
           <IndexActionButton>See our products > </IndexActionButton>
         </div>

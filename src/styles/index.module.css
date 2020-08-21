@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 .mainBar > div {
     margin: 0 15px;

@@ -12,11 +12,11 @@ footer {
 .footerColumn {
     margin-top: 10px;
     margin-right: 3.5rem;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 .footerColumn > span {
     color: #d4d4d4;
-    font-size: 13pt;
+    font-size: 11pt;
 }
 .footerColumn > a {
     display: block;
