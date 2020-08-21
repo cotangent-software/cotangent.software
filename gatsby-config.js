@@ -3,6 +3,7 @@ module.exports = {
     title: `Cotangent Software`,
     description: `Software solutions for a digital age`,
     author: `Connor Burns`,
+    email: 'ctrekker4@gmail.com',
     products: [
       {
         title: 'Dataflow',
