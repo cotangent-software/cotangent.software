@@ -17,7 +17,11 @@ const Layout = ({ children }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title,
+          products {
+            title,
+            url
+          }
         }
       }
     }
@@ -25,7 +29,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div style={{ marginTop: '94px' }}>
         <main>{children}</main>
         <footer>
@@ -36,14 +39,17 @@ const Layout = ({ children }) => {
               </Link>
             </div>
             <div className={'footerColumn'}>
-              <Link to={''}>About</Link>
-              <Link to={''}>Contact</Link>
+              <Link to={'/#about'}>About</Link>
+              <Link to={'/contact'}>Contact</Link>
               <Link to={''}>News</Link>
             </div>
             <div className={'footerColumn'}>
               <span>Products</span>
-              <Link to={''}>Dataflow</Link>
-              <Link to={'http://prismacademy.xyz'}>Prism.academy</Link>
+              {
+                data.site.siteMetadata.products.map((product, key) => (
+                  <Link key={key} to={product.url}>{product.title}</Link>
+                ))
+              }
             </div>
             <div style={{ position: 'absolute', bottom: 15, right: 20, color: '#a1a1a1', textAlign: 'right' }}>
               <div className={'privacySection'}>
@@ -54,6 +60,7 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
+      <Header siteTitle={data.site.siteMetadata.title} />
     </>
   )
 }

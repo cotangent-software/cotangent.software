@@ -4,8 +4,40 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from '../styles/index.module.css'
 import IndexActionButton from '../components/IndexActionButton';
+import { graphql } from 'gatsby';
 
-function IndexPage() {
+
+const ProductSquare = ({ title, description, url, logo, isNew }) => (
+  <div className={styles.productSquare}>
+    <div className={styles.productSquareContent}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        { logo && <div style={{ backgroundImage: 'url("' +logo + '")'}} className={styles.productSquareLogo}/> }
+        <h1 style={{ marginBottom: '15px' }}>{title}</h1>
+        { isNew && <><div style={{ marginLeft: '12px' }}/><NewTag/></> }
+      </div>
+      <div style={{ margin: '0 3px' }}>
+        <p>
+          {description}
+        </p>
+      </div>
+    </div>
+    <div style={{ position: 'absolute', bottom: '30px', right: '20px' }}>
+      <IndexActionButton href={url}>Go &gt;</IndexActionButton>
+    </div>
+  </div>
+);
+
+
+const NewTag = () => (
+  <span style={{ borderRadius: '20px', backgroundColor: 'red', color: 'white', fontSize: '14pt', padding: '5px' }}>
+    New
+  </span>
+);
+
+
+function IndexPage({ data }) {
+  const products = data.site.siteMetadata.products;
+
   const [update, setUpdate] = useState(0);
   const [rectValuesLeft, setRectValuesLeft] = useState({});
   const [rectValuesRight, setRectValuesRight] = useState({});
@@ -17,13 +49,6 @@ function IndexPage() {
   const leftCanvas = useRef();
   const rightCanvas = useRef();
   useEffect(() => {
-    window.onresize = function() {
-      leftCanvas.current.width = 0;
-      rightCanvas.current.width = 0;
-      leftCanvas.current.height = 0;
-      rightCanvas.current.height = 0;
-      setUpdate(update + 1);
-    }
     function resizeCanvas() {
       if(leftCanvas.current.width === 0) {
         leftCanvas.current.width = (window.innerWidth - centerContainer.current.getBoundingClientRect().width) / 2;
@@ -74,6 +99,19 @@ function IndexPage() {
     const rectSize = 15;
     drawPattern(leftCanvas.current, leftC, rectSize, {});
     drawPattern(rightCanvas.current, rightC, rectSize, {}, false);
+  
+  
+    function handleResize() {
+      leftCanvas.current.width = 0;
+      rightCanvas.current.width = 0;
+      leftCanvas.current.height = 0;
+      rightCanvas.current.height = 0;
+      setUpdate(update + 1);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
   });
   return (
     <Layout>
@@ -84,15 +122,57 @@ function IndexPage() {
         </div>
         <div ref={centerContainer} style={{ flexGrow: 1, height: '400px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h1 style={{ marginBottom: '15px' }}>Software for the future</h1>
-          <IndexActionButton>See our products > </IndexActionButton>
+          <IndexActionButton href={'#products'}>See our products > </IndexActionButton>
         </div>
         <div ref={rightCanvasContainer} style={{ flexGrow: 10 }}>
           <canvas ref={rightCanvas} width={'0'}> </canvas>
         </div>
-        
+      </div>
+      <div className={styles.aboutContainer} id={'about'}>
+        <h3>About Us</h3>
+        <div>
+          <p>
+            We are devoted to building software that makes the people's lives easier. Our main goal in developing
+            Dataflow was to streamline development reducing redundant efforts. Likewise, our goal in developing
+            Prism academy was to help people with a passion reach their goals.
+          </p>
+        </div>
+      </div>
+      <div className={styles.productsContainer} id={'products'}>
+        <h3>Products</h3>
+        <div className={styles.productsGrid}>
+          {
+            products.map((product, key) => (
+              <ProductSquare
+                key={key}
+                title={product.title}
+                description={product.description}
+                url={product.url}
+                logo={product.logo}
+                isNew={product.isNew}
+              />
+            ))
+          }
+        </div>
       </div>
     </Layout>
   );
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        products {
+          title,
+          description,
+          url,
+          logo,
+          isNew
+        }
+      }
+    }
+  }
+`

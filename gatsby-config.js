@@ -3,6 +3,20 @@ module.exports = {
     title: `Cotangent Software`,
     description: `Software solutions for a digital age`,
     author: `Connor Burns`,
+    products: [
+      {
+        title: 'Dataflow',
+        description: 'A modular graph-based approach to software development, with a specialty for backend web development',
+        url: 'https://github.com/cotangent-software/dataflow-core',
+        logo: 'https://raw.githubusercontent.com/cotangent-software/dataflow-core/master/logo.png',
+        isNew: true
+      },
+      {
+        title: 'Prism.academy',
+        description: 'An AI-driven approach for creating personalized learning plans surrounding virtually any subject or area of interest.',
+        url: 'http://prismacademy.xyz'
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

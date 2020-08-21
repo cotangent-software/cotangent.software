@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 25px;
 }
 .mainBar > div {
     margin: 0 15px;
@@ -11,4 +12,53 @@
 .mainBar h1 {
     margin: 0;
     font-weight: bold;
+}
+.aboutContainer {
+    padding: 60px 20% 60px;
+    background-color: #f5f5f5;
+}
+.aboutContainer > h3 {
+    margin-bottom: 10px;
+}
+.productsContainer {
+    padding: 15px 20% 30px;
+}
+.productsContainer > h3 {
+    margin-bottom: 15px;
+}
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+/* Product Square */
+.productSquare {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    box-shadow: 2px 3px 2px 0 #dddddd;
+    background-color: #f5f5f5;
+    transition: background-color 0.5s;
+}
+.productSquare:hover {
+    background-color: #ffebc7;
+}
+.productSquareContent {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    transition: background-color 0.5s;
+    outline: 1px solid #c7c7c7;
+}
+.productSquareLogo {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 10px;
 }

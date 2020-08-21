@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './IndexActionButton.module.css';
+import { Link } from 'gatsby';
 
-const IndexActionButton = ({ children }) => (
-  <button className={styles.rootButton}>
+const IndexActionButton = ({ children, href }) => (
+  <Link to={href} className={styles.rootButton}>
     {children}
-  </button>
+  </Link>
 );
 
 export default IndexActionButton;

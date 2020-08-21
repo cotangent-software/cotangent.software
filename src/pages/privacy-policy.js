@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 const PrivacyPolicy = () => (
   <Layout>
     <SEO title="Privacy Policy" />
-    <div className={'textContainer'}>
+    <div className={'textContainer'} style={{ marginBottom: '100px' }}>
         <h1>Privacy Policy for Cotangent Software LLC</h1>
       
         <p>At Cotangent Software, accessible from https://cotangent.software, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Cotangent Software and how we use it.</p>
