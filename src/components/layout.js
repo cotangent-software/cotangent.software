@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
             <div className={'footerColumn'}>
               <Link to={'/#about'}>About</Link>
               <Link to={'/contact'}>Contact</Link>
-              <Link to={''}>News</Link>
+              {/*<Link to={''}>News</Link>*/}
             </div>
             <div className={'footerColumn'}>
               <span>Products</span>
