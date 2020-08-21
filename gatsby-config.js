@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/',
   siteMetadata: {
     title: `Cotangent Software`,
     description: `Software solutions for a digital age`,
@@ -47,6 +48,15 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-176072172-1',
+        head: false,
+        defer: false,
+        cookieDomain: 'cotangent.software'
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

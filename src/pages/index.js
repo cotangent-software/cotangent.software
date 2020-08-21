@@ -86,7 +86,7 @@ function IndexPage({ data }) {
             const gt = g + (255 - g) * (1 - rv);
             const bt = b + (255 - b) * (1 - rv);
             c.fillStyle = 'rgb(' + rt + ',' + gt + ',' + bt + ')';
-            c.fillRect(x * rectSize, y * rectSize, rectSize, rectSize);
+            c.fillRect(x * rectSize + (left ? canvas.width % rectSize : 0), y * rectSize, rectSize, rectSize);
           }
         }
       }
