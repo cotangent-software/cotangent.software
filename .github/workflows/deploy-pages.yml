@@ -22,7 +22,11 @@ jobs:
         node-version: '14'
     - run: npm install -g gatsby-cli
     - run: npm install
-    - run: git config user.name "Connor Burns"
-    - run: git config user.email "ctrekker4@gmail.com"
-    - run: npm run deploy
-
+    - run: gatsby build --prefix-paths
+    - run: echo cotangent.software > public/CNAME
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: public
