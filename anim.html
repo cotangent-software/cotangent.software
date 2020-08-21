@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation Test</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500">You need javascript dude</canvas>
+<canvas id="canvas2" width="500" height="500">You need javascript dude</canvas>
+<script>
+  const canvas = document.getElementById('canvas');
+  const canvas2 = document.getElementById('canvas2');
+  const c = canvas.getContext('2d');
+  const c2 = canvas2.getContext('2d');
+
+  window.requestAnimationFrame(draw);
+
+  const r = 255;
+  const g = 100;
+  const b = 13;
+  let rectValues = {};
+  const rectSize = 15;
+
+  for (let x = 0; x < canvas.width / rectSize; x++) {
+    for (let y = 0; y < canvas.height / rectSize; y++) {
+        c2.fillStyle = 'rgb(' + r + ',' + g + ',' + b + ')';
+        if(Math.random() < 0.8) {
+          c2.fillRect(x * rectSize, y * rectSize, rectSize, rectSize);
+        }
+    }
+  }
+
+  function draw() {
+    window.requestAnimationFrame(draw);
+    c.clearRect(0, 0, canvas.width, canvas.height);
+    for (let x = 0; x < canvas.width / rectSize; x++) {
+      for (let y = 0; y < canvas.height / rectSize; y++) {
+        const xNorm = x / (0.75 * canvas.width / rectSize);
+        const yNorm = y / (canvas.height / rectSize);
+        const prob = xNorm - (1 - Math.exp(-Math.pow(yNorm * 4 - 2, 2)));
+        if (rectValues[x + ' ' + y] === undefined) rectValues[x + ' ' + y] = Math.random() < prob ? prob : 0;
+        const rv = rectValues[x + ' ' + y];
+        if (rv > 0) {
+          const rt = r;
+          const gt = g + (255 - g) * (1 - rv);
+          const bt = b + (255 - b) * (1 - rv);
+          c.fillStyle = 'rgb(' + rt + ',' + gt + ',' + bt + ')';
+          c.fillRect(x * rectSize, y * rectSize, rectSize, rectSize);
+        }
+      }
+    }
+  }
+</script>
+</body>
+</html>

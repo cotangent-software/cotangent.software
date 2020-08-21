@@ -1,0 +1,15 @@
+.mainBar {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.mainBar > div {
+    margin: 0 15px;
+}
+.mainBar h1 {
+    margin: 0;
+    font-weight: bold;
+}
