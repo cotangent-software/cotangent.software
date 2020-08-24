@@ -57,8 +57,11 @@
 .productSquareLogo {
     width: 50px;
     height: 50px;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 4px 0 #b0b0b0;
     border-radius: 10px;
     margin-right: 10px;
 }

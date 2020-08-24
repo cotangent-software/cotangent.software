@@ -10,13 +10,14 @@ module.exports = {
         title: 'Dataflow',
         description: 'A modular graph-based approach to software development, with a specialty for backend web development',
         url: 'https://github.com/cotangent-software/dataflow-core',
-        logo: 'https://raw.githubusercontent.com/cotangent-software/dataflow-core/master/logo.png',
+        logo: 'https://raw.githubusercontent.com/cotangent-software/assets/master/dataflow-logo.png',
         isNew: true
       },
       {
         title: 'Prism.academy',
         description: 'An AI-driven approach for creating personalized learning plans surrounding virtually any subject or area of interest.',
-        url: 'http://prismacademy.xyz'
+        url: 'http://prismacademy.xyz',
+        logo: 'https://raw.githubusercontent.com/cotangent-software/assets/master/prism-academy-logo.png'
       }
     ],
   },
