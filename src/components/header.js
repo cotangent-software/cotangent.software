@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
       <div style={{ flexGrow: 1 }}/>
       <nav className={'flexCenter'}>
         <Link to={'/#about'}>About</Link>
-        <Link to={'/#products'}>Products</Link>
+        <Link to={'/products'}>Products</Link>
         <Link to={'/contact'}>Contact</Link>
         <Link to={'https://github.com/cotangent-software'} target={'_blank'} style={{ display: 'flex' }}><span className={styles.githubLogo}/></Link>
       </nav>

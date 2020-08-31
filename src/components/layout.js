@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
               {/*<Link to={''}>News</Link>*/}
             </div>
             <div className={'footerColumn'}>
-              <span>Products</span>
+              <Link to={'/products'} style={{ fontWeight: 'bold' }}>Products</Link>
               {
                 data.site.siteMetadata.products.map((product, key) => (
                   <Link key={key} to={product.url}>{product.title}</Link>
