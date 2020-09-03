@@ -36,7 +36,7 @@ function Contact({ data }) {
     <div className={'textContainer'}>
       <h2>Contact</h2>
       <p>
-        To contact us, send us an email at {data.site.siteMetadata.email}.
+        To contact us, either fill out the form below or send us an email at {data.site.siteMetadata.email}.
         It may take up to 7 business days to receive a reply.
       </p>
       <h4 style={{ marginBottom: '10px' }}>Contact Form</h4>
