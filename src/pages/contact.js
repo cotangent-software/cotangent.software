@@ -18,7 +18,7 @@ function Contact({ data }) {
     myHeaders.append('pragma', 'no-cache');
     myHeaders.append('cache-control', 'no-cache');
     myHeaders.append('content-type', 'application/json');
-    fetch('http://cot.llc/contact', {
+    fetch('https://cot.llc/contact', {
       method: 'POST',
       mode: 'cors',
       headers: myHeaders,
