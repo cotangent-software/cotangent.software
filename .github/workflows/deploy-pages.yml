@@ -22,7 +22,7 @@ jobs:
         node-version: '14'
     - run: npm install -g gatsby-cli
     - run: npm install
-    - run: gatsby build --prefix-paths
+    - run: npm run build
     - run: echo cotangent.software > public/CNAME
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@3.5.9
