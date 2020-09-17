@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
               <Link to={'/products'} style={{ fontWeight: 'bold' }}>Products</Link>
               {
                 data.site.siteMetadata.products.map((product, key) => (
-                  <Link key={key} to={product.url}>{product.title}</Link>
+                  <a key={key} href={product.url}>{product.title}</a>
                 ))
               }
             </div>

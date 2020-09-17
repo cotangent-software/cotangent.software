@@ -91,14 +91,14 @@ function IndexPage({ data }) {
       <SEO title="Home"/>
       <div ref={mainBar} className={styles.mainBar}>
         <div ref={leftCanvasContainer} style={{ flexGrow: 10 }}>
-          <canvas ref={leftCanvas} width={'0'}> </canvas>
+          <canvas ref={leftCanvas} width={'0'} className={styles.sideCanvas}> </canvas>
         </div>
         <div ref={centerContainer} style={{ flexGrow: 1, height: '400px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <h1 style={{ marginBottom: '15px' }}>Software for the future</h1>
           <IndexActionButton href={'/products'}>See our products > </IndexActionButton>
         </div>
         <div ref={rightCanvasContainer} style={{ flexGrow: 10 }}>
-          <canvas ref={rightCanvas} width={'0'}> </canvas>
+          <canvas ref={rightCanvas} width={'0'} className={styles.sideCanvas}> </canvas>
         </div>
       </div>
       <div className={styles.aboutContainer} id={'about'}>

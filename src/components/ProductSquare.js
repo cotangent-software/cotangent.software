@@ -24,7 +24,7 @@ const ProductSquare = ({ title, description, url, logo, isNew }) => (
         </p>
       </div>
       <div style={{ width: '100%', textAlign: 'right' }}>
-        <IndexActionButton href={url}>Go &gt;</IndexActionButton>
+        <IndexActionButton external href={url}>Go &gt;</IndexActionButton>
       </div>
     </div>
   </div>
