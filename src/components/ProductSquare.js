@@ -11,19 +11,21 @@ const NewTag = () => (
 const ProductSquare = ({ title, description, url, logo, isNew }) => (
   <div className={styles.productSquare}>
     <div className={styles.productSquareContent}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div className={styles.productSquareHeader}>
         { logo && <div style={{ backgroundImage: 'url("' +logo + '")'}} className={styles.productSquareLogo}/> }
-        <h1 style={{ marginBottom: '15px' }}>{title}</h1>
-        { isNew && <><div style={{ marginLeft: '12px' }}/><NewTag/></> }
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <h1 style={{ marginBottom: '15px' }}>{title}</h1>
+          { isNew && <><div style={{ marginLeft: '12px' }}/><NewTag/></> }
+        </div>
       </div>
       <div style={{ margin: '0 3px' }}>
         <p>
           {description}
         </p>
       </div>
-    </div>
-    <div style={{ position: 'absolute', bottom: '30px', right: '20px' }}>
-      <IndexActionButton href={url}>Go &gt;</IndexActionButton>
+      <div style={{ width: '100%', textAlign: 'right' }}>
+        <IndexActionButton external href={url}>Go &gt;</IndexActionButton>
+      </div>
     </div>
   </div>
 );

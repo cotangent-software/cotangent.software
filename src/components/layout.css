@@ -34,3 +34,26 @@ footer {
 .privacySection > a {
     color: #a1a1a1;
 }
+.footerContainer {
+    display: flex;
+}
+.footerLogo {
+    margin-right: 5rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .footerContainer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .footerColumn {
+        margin: 25px 0;
+    }
+    .footerLogo {
+        margin: 0;
+    }
+    .lastFooterColumn {
+        margin-bottom: 75px;
+    }
+}
