@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styles from './header.module.css'
 import { Link } from 'gatsby';
 import { MenuOutlined } from '@ant-design/icons';
-import { Button, Drawer, List, Typography } from 'antd';
+import { Button, Drawer } from 'antd';
 
 const Header = ({ siteTitle }) => {
   const mobileNavigation = [
@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => {
         </div>
       </div>
       <Drawer
-        title='Navigation'
+        title='Cotangent Software'
         placement={'left'}
         closable={true}
         onClose={onClose}

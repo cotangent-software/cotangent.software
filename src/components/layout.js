@@ -32,8 +32,8 @@ const Layout = ({ children }) => {
       <div style={{ marginTop: '94px' }}>
         <main>{children}</main>
         <footer>
-          <div style={{ display: 'flex' }}>
-            <div style={{ marginRight: '5rem' }}>
+          <div className={'footerContainer'}>
+            <div className={'footerLogo'}>
               <Link to={'/'}>
                 <div className={'logoLargeDark'}/>
               </Link>
@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
               <Link to={'/contact'}>Contact</Link>
               {/*<Link to={''}>News</Link>*/}
             </div>
-            <div className={'footerColumn'}>
+            <div className={'footerColumn lastFooterColumn'}>
               <Link to={'/products'} style={{ fontWeight: 'bold' }}>Products</Link>
               {
                 data.site.siteMetadata.products.map((product, key) => (
