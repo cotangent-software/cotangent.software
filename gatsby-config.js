@@ -53,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-176072172-1',
+        trackingId: 'UA-180051468-2',
         head: false,
         defer: false,
         cookieDomain: 'cotangent.software'
