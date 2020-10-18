@@ -30,6 +30,21 @@ input[type=text]:focus, textarea:focus {
     border: 1px solid black;
 }
 
+.abstractLogo {
+    background-color: #4c4c4c;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+}
+.githubLogo {
+    mask: url(../images/github-logo.svg);
+}
+.twitterLogo {
+    mask: url(../images/twitter-logo.svg);
+}
+
 @media only screen and (max-width: 1200px) {
     .textContainer {
         margin: 0 12rem;

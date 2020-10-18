@@ -4,8 +4,9 @@ import styles from './header.module.css'
 import { Link } from 'gatsby';
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer } from 'antd';
+import { Divider } from 'antd/es';
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, githubLink, twitterLink }) => {
   const mobileNavigation = [
     { name: 'Home', url: '/' },
     { name: 'About', url: '/#about' },
@@ -33,8 +34,12 @@ const Header = ({ siteTitle }) => {
           <Link to={'/#about'}>About</Link>
           <Link to={'/products'}>Products</Link>
           <Link to={'/contact'}>Contact</Link>
-          <a href={'https://github.com/cotangent-software'} target={'_blank'} style={{display: 'flex'}}><span
-            className={styles.githubLogo}/></a>
+          <a className={styles.handleLink} href={githubLink} target={'_blank'} style={{display: 'flex'}}>
+            <span className={'abstractLogo githubLogo'}/>
+          </a>
+          <a className={styles.handleLink} href={twitterLink} target={'_blank'} style={{display: 'flex'}}>
+            <span className={'abstractLogo twitterLogo'}/>
+          </a>
         </nav>
         <div className={styles.compactMenu}>
           <Button shape='circle' icon={<MenuOutlined/>} onClick={() => setVisible(true)}/>
@@ -49,11 +54,18 @@ const Header = ({ siteTitle }) => {
       >
         {
           mobileNavigation.map(x => (
-            <p>
-              <Link key={x.name} to={x.url} onClick={onClose}>{x.name}</Link>
+            <p key={x.name}>
+              <Link to={x.url} onClick={onClose}>{x.name}</Link>
             </p>
           ))
         }
+        <Divider/>
+        <p>
+          <Link to={githubLink} target={'_blank'}>GitHub</Link>
+        </p>
+        <p>
+          <Link to={twitterLink} target={'_blank'}>Twitter</Link>
+        </p>
       </Drawer>
     </header>
   );
@@ -61,6 +73,8 @@ const Header = ({ siteTitle }) => {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  githubLink: PropTypes.string,
+  twitterLink: PropTypes.string
 }
 
 Header.defaultProps = {

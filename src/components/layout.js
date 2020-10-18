@@ -18,6 +18,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title,
+          githubLink,
+          twitterLink,
           products {
             title,
             url
@@ -43,13 +45,21 @@ const Layout = ({ children }) => {
               <Link to={'/contact'}>Contact</Link>
               {/*<Link to={''}>News</Link>*/}
             </div>
-            <div className={'footerColumn lastFooterColumn'}>
+            <div className={'footerColumn'}>
               <Link to={'/products'} style={{ fontWeight: 'bold' }}>Products</Link>
               {
                 data.site.siteMetadata.products.map((product, key) => (
                   <a key={key} href={product.url}>{product.title}</a>
                 ))
               }
+            </div>
+            <div className={'footerColumn lastFooterColumn'}>
+              <Link className={'logoLink'} to={data.site.siteMetadata.githubLink} target={'_blank'}>
+                <span className={'linkLogo githubLogo'}/>GitHub
+              </Link>
+              <Link className={'logoLink'} to={data.site.siteMetadata.twitterLink} target={'_blank'}>
+                <span className={'linkLogo twitterLogo'}/>Twitter
+              </Link>
             </div>
             <div style={{ position: 'absolute', bottom: 15, right: 20, color: '#a1a1a1', textAlign: 'right' }}>
               <div className={'privacySection'}>
@@ -60,7 +70,10 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        githubLink={data.site.siteMetadata.githubLink}
+        twitterLink={data.site.siteMetadata.twitterLink}/>
     </>
   )
 }

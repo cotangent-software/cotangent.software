@@ -105,7 +105,7 @@ function IndexPage({ data }) {
         <h3>About Us</h3>
         <div>
           <p>
-            We are devoted to building software that makes the people's lives easier. Our main goal in developing
+            We are devoted to building software that makes lives easier. Our main goal in developing
             Dataflow was to streamline development reducing redundant efforts. Likewise, our goal in developing
             Prism academy was to help people with a passion reach their goals.
           </p>
