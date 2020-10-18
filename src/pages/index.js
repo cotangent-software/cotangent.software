@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from '../styles/index.module.css'
 import IndexActionButton from '../components/IndexActionButton';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import ProductSquare from '../components/ProductSquare';
 
 
@@ -112,7 +112,9 @@ function IndexPage({ data }) {
         </div>
       </div>
       <div className={styles.productsContainer} id={'products'}>
-        <h3>Products</h3>
+        <Link to={'/products'}>
+          <h3>Products</h3>
+        </Link>
         <div className={styles.productsGrid}>
           {
             products.map((product, key) => (
