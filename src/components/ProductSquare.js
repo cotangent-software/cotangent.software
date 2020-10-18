@@ -18,13 +18,13 @@ const ProductSquare = ({ title, description, url, logo, isNew }) => (
           { isNew && <><div style={{ marginLeft: '12px' }}/><NewTag/></> }
         </div>
       </div>
-      <div style={{ margin: '0 3px' }}>
-        <p>
+      <div style={{ margin: '0 3px', display: 'flex' }}>
+        <p style={{ marginRight: '10px' }}>
           {description}
         </p>
-      </div>
-      <div style={{ width: '100%', textAlign: 'right' }}>
-        <IndexActionButton external href={url}>Go &gt;</IndexActionButton>
+        <p style={{ minWidth: 'fit-content'}}>
+          <IndexActionButton external href={url}>Go &gt;</IndexActionButton>
+        </p>
       </div>
     </div>
   </div>

@@ -1,4 +1,6 @@
 .rootButton {
+    display: inline-block;
+    min-width: fit-content;
     border-radius: 0;
     font-size: 16pt;
     padding: 13px;

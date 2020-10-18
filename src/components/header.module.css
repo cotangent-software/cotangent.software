@@ -16,13 +16,9 @@ header {
     height: 50px;
     display: inline-block;
 }
-.githubLogo {
-    background-image: url(../images/github-logo.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 32px;
-    height: 32px;
-    display: inline-block;
+
+.handleLink {
+    margin-right: 24px;
 }
 
 nav > a {

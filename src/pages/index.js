@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styles from '../styles/index.module.css'
 import IndexActionButton from '../components/IndexActionButton';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import ProductSquare from '../components/ProductSquare';
 
 
@@ -105,14 +105,16 @@ function IndexPage({ data }) {
         <h3>About Us</h3>
         <div>
           <p>
-            We are devoted to building software that makes the people's lives easier. Our main goal in developing
+            We are devoted to building software that makes lives easier. Our main goal in developing
             Dataflow was to streamline development reducing redundant efforts. Likewise, our goal in developing
             Prism academy was to help people with a passion reach their goals.
           </p>
         </div>
       </div>
       <div className={styles.productsContainer} id={'products'}>
-        <h3>Products</h3>
+        <Link to={'/products'}>
+          <h3>Products</h3>
+        </Link>
         <div className={styles.productsGrid}>
           {
             products.map((product, key) => (

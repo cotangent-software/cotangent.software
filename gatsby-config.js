@@ -5,6 +5,8 @@ module.exports = {
     description: `Software solutions for a digital age`,
     author: `Connor Burns`,
     email: 'support@cot.llc',
+    githubLink: 'https://github.com/cotangent-software',
+    twitterLink: 'https://twitter.com/CotangentLLC',
     products: [
       {
         title: 'Dataflow',
