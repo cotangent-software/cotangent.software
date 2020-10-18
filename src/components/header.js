@@ -61,10 +61,10 @@ const Header = ({ siteTitle, githubLink, twitterLink }) => {
         }
         <Divider/>
         <p>
-          <Link to={githubLink} target={'_blank'}>GitHub</Link>
+          <Link className={'logoLink'} to={githubLink} target={'_blank'}><span className={'linkLogo githubLogo'}/>GitHub</Link>
         </p>
         <p>
-          <Link to={twitterLink} target={'_blank'}>Twitter</Link>
+          <Link className={'logoLink'} to={twitterLink} target={'_blank'}><span className={'linkLogo twitterLogo'}/>Twitter</Link>
         </p>
       </Drawer>
     </header>
