@@ -55,10 +55,10 @@ const Layout = ({ children }) => {
             </div>
             <div className={'footerColumn lastFooterColumn'}>
               <Link className={'logoLink'} to={data.site.siteMetadata.githubLink} target={'_blank'}>
-                <span className={'linkLogo githubLogo'}/>GitHub
+                <span className={'linkLogo footerLinkLogo githubLogo'}/>GitHub
               </Link>
               <Link className={'logoLink'} to={data.site.siteMetadata.twitterLink} target={'_blank'}>
-                <span className={'linkLogo twitterLogo'}/>Twitter
+                <span className={'linkLogo footerLinkLogo twitterLogo'}/>Twitter
               </Link>
             </div>
             <div style={{ position: 'absolute', bottom: 15, right: 20, color: '#a1a1a1', textAlign: 'right' }}>

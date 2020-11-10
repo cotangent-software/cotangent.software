@@ -9,7 +9,7 @@ function Products({ data }) {
   return (
     <Layout>
       <div className={styles.productsContainer} id={'products'} style={{ paddingTop: 0 }}>
-        <h2>Products</h2>
+        <h2 style={{ marginLeft: '15px' }}>Products</h2>
         <div className={styles.productsGrid}>
           {
             products.map((product, key) => (

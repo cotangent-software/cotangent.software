@@ -38,6 +38,20 @@ input[type=text]:focus, textarea:focus {
     height: 32px;
     display: inline-block;
 }
+.logoLink {
+    display: flex !important;
+    align-items: center;
+}
+.linkLogo {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-color: #1890ff;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 .githubLogo {
     mask: url(../images/github-logo.svg);
 }
