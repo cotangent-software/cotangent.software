@@ -18,7 +18,7 @@ module.exports = {
       {
         title: 'Prism.academy',
         description: 'An AI-driven approach for creating personalized learning plans surrounding virtually any subject or area of interest.',
-        url: 'http://prismacademy.xyz',
+        url: 'http://prismcourses.com',
         logo: 'https://raw.githubusercontent.com/cotangent-software/assets/master/prism-academy-logo.png'
       }
     ],
